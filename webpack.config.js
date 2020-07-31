@@ -8,21 +8,29 @@ require('@babel/polyfill'); // ES6 Import for React
 const htmlPlugin = new HtmlWebPackPlugin({
   template: './public/index.html',
   filename: './index.html',
-  inject: 'body',
+  chunks: ['main'],
+  // inject: 'body',
   favicon: './public/favicon/favicon.ico',
 });
 
-const copyWebpack = new CopyWebpackPlugin({
-  patterns: [
-    { from: './public/', to: './' },
-    // { from: './src/assets/', to: './assets/' }
-  ],
-});
+// const copyWebpack = new CopyWebpackPlugin({
+//   patterns: [
+//     {
+//       from: './public/',
+//       to: './',
+//       globOptions: {
+//         dot: true,
+//         ignore: ['./public/index.html',],
+//       },
+//     },
+//     // { from: './src/assets/', to: './assets/' }
+//   ],
+// });
 
 module.exports = {
   entry: ['@babel/polyfill', './src/index.js'],
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
   resolve: {
@@ -40,7 +48,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
-            plugins: ['@babel/plugin-syntax-jsx'],
+            // plugins: ['@babel/plugin-syntax-jsx'],
           },
         },
       },
@@ -70,8 +78,8 @@ module.exports = {
     ],
   },
   plugins: [
-    copyWebpack, // fresh copy of the ./public folder
     htmlPlugin,
+    // copyWebpack, // fresh copy of the ./public folder
     new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({
       React: 'react',
@@ -83,8 +91,9 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: './build',
+    contentBase: './dist',
     hot: true,
+    watchContentBase: true,
   },
   optimization: {
     // splits node_modules into a seperate vendors bundle

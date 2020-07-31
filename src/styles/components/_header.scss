@@ -1,2 +1,31 @@
 .header {
+  z-index: 100;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  position: fixed;
+  padding: 1% 0;
+}
+.navigation {
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  &__logo {
+    font-size: $font-size-header;
+    margin-right: 10%;
+  }
+  &__search {
+    border: none;
+    border-bottom: 2px solid $color-priamry;
+  }
+  &__links {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    a {
+      &:hover {
+        border-bottom: 2px solid $color-priamry;
+      }
+    }
+  }
 }

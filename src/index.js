@@ -13,7 +13,7 @@ render(
   <React.StrictMode>
     <Router>
       <Layout>
-        <Switch>
+        <Switch> 
           <Route exact path='/' component={HomePage} />
           <Route path='/movie/:movieId' component={MovieDetails} />
           <Route component={FourOhFour} />
@@ -24,4 +24,9 @@ render(
   document.getElementById('root')
 );
 
-module.hot.accept();
+// To debug the HMR
+if (module.hot) {
+  module.hot.accept(function (err) {
+    console.log('An error occurred while accepting new version');
+  });
+}
