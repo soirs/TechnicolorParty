@@ -1,9 +1,12 @@
 // Colors
 $color-priamry: hsla(245, 100, 15, 1);
 
+$color-white: hsla(0, 0%, 100%, 1);
+
 // Fonts
 $font-heading: 'Bree Serif', fira-sans-2, 'Helvetica', 'Arial', 'sans-serif' ;
 
 
 // Sizing
-$font-size-header: 2rem;  
+$font-size-header: 2rem;
+$max-site-width: 1280px;

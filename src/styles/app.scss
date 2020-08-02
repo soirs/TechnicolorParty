@@ -10,9 +10,14 @@
 //
 @import "base/base";
 
+// Vendor styles
+//
+@import "vendors/flickity";
+
 // Components
 //
 @import "components/header";
+@import "components/hero";
 
 
 

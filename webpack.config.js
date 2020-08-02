@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 require('@babel/polyfill'); // ES6 Import for React
@@ -84,6 +85,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       React: 'react',
     }),
+    new Dotenv({ systemvars: true }),
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: [autoprefixer()],

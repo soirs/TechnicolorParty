@@ -4,6 +4,8 @@
 body {
   font-family: $font-heading;
   max-width: 100vw;
+  max-width: $max-site-width;
+  margin: 0 auto;
 }
 
 *,

@@ -5,6 +5,8 @@
   right: 0px;
   position: fixed;
   padding: 1% 0;
+  max-width: $max-site-width;
+  margin: 0 auto;
 }
 .navigation {
   padding: 0 5%;
@@ -13,18 +15,25 @@
   &__logo {
     font-size: $font-size-header;
     margin-right: 10%;
+    color: $color-white;
+    &:hover {
+      border-bottom: 2px solid $color-white;
+    }
   }
   &__search {
     border: none;
-    border-bottom: 2px solid $color-priamry;
+    border-bottom: 2px solid $color-white;
+    background: transparent;
+    display: none;
   }
   &__links {
     width: 30%;
     display: flex;
     justify-content: space-around;
     a {
+      color: $color-white;
       &:hover {
-        border-bottom: 2px solid $color-priamry;
+        border-bottom: 2px solid $color-white;
       }
     }
   }
