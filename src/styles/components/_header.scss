@@ -1,23 +1,24 @@
 .header {
-  z-index: 100;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  position: fixed;
+  // z-index: 100;
+  // top: 0px;
+  // left: 0px;
+  // right: 0px;
+  // position: fixed;
   padding: 1% 0;
   max-width: $max-site-width;
   margin: 0 auto;
 }
 .navigation {
-  padding: 0 5%;
+  // padding: 0 5%;
   display: flex;
   justify-content: space-between;
   &__logo {
     font-size: $font-size-header;
     margin-right: 10%;
-    color: $color-white;
+    // color: $color-white;
+    color: $color-primary;
     &:hover {
-      border-bottom: 2px solid $color-white;
+      border-bottom: 2px solid $color-primary;
     }
   }
   &__search {
@@ -31,9 +32,10 @@
     display: flex;
     justify-content: space-around;
     a {
-      color: $color-white;
+      // color: $color-white;
       &:hover {
-        border-bottom: 2px solid $color-white;
+        // border-bottom: 2px solid $color-white;
+        border-bottom: 2px solid $color-primary;
       }
     }
   }

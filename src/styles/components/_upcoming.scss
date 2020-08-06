@@ -1,0 +1,55 @@
+.upcoming {
+  position: relative;
+  &-poster {
+    z-index: -1;
+  }
+  &-content {
+    opacity: 0;
+    transition: opacity 250ms ease-in-out 0s;
+    // visibility: hidden;
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+    z-index: 4;
+    bottom: 0;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    background: rgba(49, 54, 57, 0.4); // fallback
+    background: linear-gradient(
+      225deg,
+      rgba(49, 54, 57, 0) 0%,
+      rgba(49, 54, 57, 0.6) 60%,
+      rgba(49, 54, 57, 1) 100%
+    );
+    &:hover {
+      opacity: 1;
+    }
+    &__title {
+    }
+  }
+  .flickity-slider {
+    a {
+      margin: 0 5px;
+      border-radius: 5px;
+      // &::before {
+      //   @extend %pseudo-block;
+      //   content: '';
+      //   display: block;
+      // }
+      // &:hover::after {
+      //   z-index: 3;
+      // }
+      // &::after {
+      //   @extend %pseudo-block;
+      //   z-index: -2;
+      //   content: '';
+      //   display: inline-block;
+      //   height: 100%;
+      //   left: 0;
+      // }
+    }
+  }
+}

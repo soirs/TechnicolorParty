@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { FETCH_POPULAR } from '../../../redux/popularMoviesSlice';
 import { RootState } from '../../../redux/rootReducer';
-import Carousel from '../../utils/carousel';
+import Carousel from '../../utils/hero-carousel';
 
 const Hero = () => {
   const dispatch = useDispatch();

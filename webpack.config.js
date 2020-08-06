@@ -5,6 +5,7 @@ const Dotenv = require('dotenv-webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 require('@babel/polyfill'); // ES6 Import for React
+const dev = process.env.development;
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: './public/index.html',
@@ -97,6 +98,7 @@ module.exports = {
     hot: true,
     watchContentBase: true,
   },
+  devtool: dev ? 'eval-cheap-module-source-map' : 'source-map',
   optimization: {
     // splits node_modules into a seperate vendors bundle
     splitChunks: {

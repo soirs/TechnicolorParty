@@ -23,20 +23,6 @@ const popularMovies = createSlice({
         movies: results,
       };
     },
-    // getCommentsStart(state) {
-    //   state.loading = true
-    //   state.error = null
-    // },
-    // getCommentsSuccess(state, action: PayloadAction<CommentLoaded>) {
-    //   const { comments, issueId } = action.payload
-    //   state.commentsByIssue[issueId] = comments
-    //   state.loading = false
-    //   state.error = null
-    // },
-    // getCommentsFailure(state, action: PayloadAction<string>) {
-    //   state.loading = false
-    //   state.error = action.payload
-    // }
   },
 });
 export const { FETCH_POPULAR_MOVIES } = popularMovies.actions;

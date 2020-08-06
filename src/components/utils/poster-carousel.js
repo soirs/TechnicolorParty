@@ -1,20 +1,19 @@
 import React from 'react';
 import Flickity from 'react-flickity-component';
 import { connect } from 'react-redux';
-// import MovieCard from "../molecules/movieCard"
 import { Link } from 'react-router-dom';
 
-const Carousel = ({ data, isLoading }) => {
+const Carousel = ({ data, type }) => {
   const flickityOptions = {
     // groupCells: 20,
     // initialIndex: 5,
     // autoPlay: true,
     draggable: true,
-    // freeScroll: true,
+    freeScroll: true,
     imagesLoaded: true,
-    lazyLoad: true,
-    pageDots: true,
-    prevNextButtons: true,
+    // lazyLoad: true,
+    pageDots: false,
+    prevNextButtons: false,
     wrapAround: true,
   };
 
@@ -42,24 +41,22 @@ const Carousel = ({ data, isLoading }) => {
               release_date,
               vote_average,
             } = movie;
-            // const imgUrl = `https://image.tmdb.org/t/p/w780/${poster_path}`;
-            const imgUrl = `https://image.tmdb.org/t/p/w1280/${backdrop_path}`;
+            const imgUrl = `https://image.tmdb.org/t/p/w342/${poster_path}`;
+            // const imgUrl = `https://image.tmdb.org/t/p/w1280/${backdrop_path}`;
             return (
               <Link key={id} to={`/movie/${id}`} className=''>
                 <img
-                  // key={id}
-                  data-flickity-lazyload={imgUrl}
-                  // src={imgUrl}
-                  alt={`Backdrop of: ${title}`}
-                  className='hero-backdrop'
+                  // data-flickity-lazyload={imgUrl}
+                  src={imgUrl}
+                  alt={`Poster of: ${title}`}
+                  className={`${type}-poster`}
                 />
-                <div className='hero-content'>
-                  <h1 className='hero-content__title'>{title}</h1>
-                  <p className='hero-content__overview'>{overview}</p>
+                <div className={`${type}-content`}>
+                  <h2 className={`${type}-content__title`}>{title}</h2>
+                  <p className={`${type}-content__year`}>
+                    {new Date(release_date).getFullYear()}
+                  </p>
                 </div>
-                {/* <span className="absolute top-0 left-0 bg-white rounded-full w-1/4 h-auto">
-                  {vote_average}
-                </span> */}
               </Link>
             );
           })}
